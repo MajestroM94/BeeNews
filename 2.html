@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeeNews</title>
+  <link rel="stylesheet" href="MyStyle.css" />
+
+  <script src="https://www.google.com/jsapi"></script>
+   <script>
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+     var data = google.visualization.arrayToDataTable([
+      ['Год', 'обмен USD', 'обмен RUB'],
+      ['2020', 2000, 3120],
+      ['2021', 8000, 6120],
+      ['2022', 20170, 9920]
+     ]);
+     var options = {
+      title: 'Обмен валют среденстатистического жителя РФ в год',
+      hAxis: {title: 'Год'},
+      vAxis: {title: 'Тыс. купюр'}
+     };
+     var chart = new google.visualization.ColumnChart(document.getElementById('oil'));
+     chart.draw(data, options);
+    }
+   </script>
+</head>
+
+<body bgcolor="#000" background="main5.jpg">
+
+  <script defer src="main.js"></script>
+  <header class="header", background="header.jpg">
+    <div class="header_inner">
+      <div class="logo">
+        <a id="logo-ref" href="index.html"><img id="logo" src="logo1.png" alt="Логотип" /></a>
+      </div>
+      <ul class="hr">
+        <li><a href="2.html">Изменение курса валют</a></li>
+        <li><a href="3.html">Сводка новостей</a></li>
+        <li><a href="4.html">Регистрация</a></li>
+      </ul>
+    </div>
+  </header>
+<section id="home">
+  <div class="card2">
+      <div class="plitka1">
+          <img src="1.jpg"/>
+          <p>Трейдеры нарастили позиции на понижение гонконгского доллара. Курс этой валюты упал почти на 1% после 18-месячного пика в декабре. К этому привело снижение ставки межбанковских займов, и в результате — увеличение разрыва с аналогичными с американскими ставками до максимума с 2008</p>
+      </div>
+      <div class="plitka1">
+          <img src="2.jpg"/>
+          <p>
+            В рассылке брокера Газпромбанка сообщается, что он может отказать в выводе валюты на счета в иные кредитные организации. Изменения вступают в силу с 27 января — в день остановки отношений с банками-корреспондентами в США
+          </p>
+      </div>
+      <div class="plitka1">
+          <img src="3.jpg"/>
+          <p>
+            Россияне по-прежнему могут переводить средства в страну из-за рубежа: Центробанк уточнил, что ограничений на прием платежей нет. Однако трудности могут быть связаны с санкциями и контрсанкциями России, а также мерами ЦБ по стабилизации валютного курса.
+          </p>
+      </div>
+      <div class="plitka1">
+          <img src="4.jpg" />
+          <p>
+            Брокер компании «Уралсиб» перестал переводить иностранную валюту с брокерских счетов клиентов на счета в иные банки, рассказали «РБК Инвестициям» в службе поддержки брокера. Первым на это обратил внимание телеграм-канал MarketOverview.
+          </p>
+      </div>
+      <div class="plitka1">
+          <img src="5.jpg"/>
+          <p>
+            После стремительного укрепления доллара в декабре российская валюта частично отыграла потери в начале 2023 года. И, например, аналитики SberCIB Investment Research ожидают снижения курса доллара в январе до ₽65 на фоне возвращения Минфина к бюджетному правилу. Однако с февраля в силу вступают новое эмбарго для российских нефтепродуктов и запрет на продажу углеводородов
+          </p>
+      </div>
+      <div class="plitka1">
+          <img src="6.jpg"/>
+          <p>
+            Таким образом, деньги обесцениваются, на них можно купить меньше других валют. Допустим, доллар стоит ₽30. По этому курсу на ₽30 тыс. можно купить $1 тыс. Но если рубль обвалился и доллар стал стоить ₽70, то за эту же сумму можно будет получить только около $428.
+          </p>
+      </div>
+      <div class="plitka1">
+          <img src="7.jpg"/>
+          <p>
+            Банк России начал устанавливать официальные курсы рубля еще к девяти иностранным валютам с 18 января, сообщил регулятор. В перечень иностранных валют, официальные курсы которых по отношению к рублю ежедневно (по рабочим дням) устанавливаются Банком России
+          </p>
+      </div>
+  </div>
+ </section>
+
+  <section id="section-1">
+    <div id="oil" style="width: 800px; height: 600px;"></div>
+    <div>
+      <h4>Конвертер Валют</h4>
+      <div>
+        <input type="number" id="number-1" value="0" onchange="convert(1)" />
+        <select id="select-1" onchange="convert(1)">
+          <option value="RUB">RUB: Российский рубль</option>
+          <option value="USD">USD: Доллар США</option>
+          <option value="EUR">EUR: Евро</option>
+          <option value="TRY">TRY: Турецкая лира</option>
+          <option value="CNY">CNY: Китайский юань</option>
+        </select>
+      </div>
+      <div>
+        <input
+          type="number"
+          id="number-2"
+          type="number"
+          value="0"
+          onchange="convert(2)"
+        />
+        <select id="select-2" onchange="convert(2)">
+          <option value="RUB">RUB: Российский рубль</option>
+          <option selected="selected" value="USD">USD: Доллар США</option>
+          <option value="EUR">EUR: Евро</option>
+          <option value="TRY">TRY: Турецкая лира</option>
+          <option value="CNY">CNY: Китайский юань</option>
+        </select>
+      </div>
+    </div>
+
+  </section>
+
+
+</body>
+
+<footer>
+<div class="grid_footer">
+          <div class="foot">
+              <h1>О нас</h1>
+              <p>
+                Самые свежие и интересные новости, только у нас.
+                Будьте в курсе всех изменений в мире. Заглядывайте к
+                нам по чаще. Будем рады видеть вас.
+              </p>
+              <div class="foot2">
+                <div id="block">
+                  <div>
+                    <img src="yt.png" alt="youtube" />
+                    <p id="ys"></p>
+                    <h4>Views</h4>
+                  </div>
+                  <div>
+                    <img src="vk.png" alt="linkedin" />
+                    <p id="ls"></p>
+                    <h4>Friends</h4>
+                  </div>
+                  <div>
+                    <img src="ins.png" alt="tiktok" />
+                    <p id="fs"></p>
+                    <h4>Likes</h4>
+                  </div>
+                  <div>
+                    <img src="tg.png" alt="telegramm" />
+                    <p id="ts"></p>
+                    <h4>Posts</h4>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="foot">
+              <h1>Будь в курсе новостей</h1>
+              <p>Информация</p>
+              <p>FAQ</p>
+              <p>Политика конфиденциальности</p>
+              <p>Помощь</p>
+              <p>Условия и требования</p>
+              <p>Контакты</p>
+
+          </div>
+          <div class="foot">
+              <h1>Как с нами связаться</h1>
+              <div class="contact">
+                  <img src="geo.png" />
+                  <p>11 Gyrievsky drive, Moscow, 115977, Russia</p>
+              </div>
+              <div class="contact">
+                  <img src="phone.png" />
+                  <p>+7 993 123-45-67 <br /> +7 987 123-45-67</p>
+              </div>
+              <div class="contact">
+                  <img src="email.png" />
+                  <p>vop_vop@gmail.com</p>
+              </div>
+              </div>
+
+              <div class="foot">
+                <div class="card5">
+                    <div class="imgCAL"><img src="les.jpg"/></div>
+                    <div class="dayOfWeek">M</div>
+                    <div class="dayOfWeek">T</div>
+                    <div class="dayOfWeek">W</div>
+                    <div class="dayOfWeek">T</div>
+                    <div class="dayOfWeek">F</div>
+                    <div class="dayOfWeek">S</div>
+                    <div class="dayOfWeek">S</div>
+
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30</div>
+                    <div class="day">31</div>
+                </div>
+              </div>
+
+          </div>
+</div>
+</footer>
+</html>
